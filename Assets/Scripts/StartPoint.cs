@@ -10,8 +10,6 @@ public class StartPoint: MonoBehaviour
     public GameObject[] multiplayer;
     public GameObject singleplayer;
 
-    public GameObject gambiarraBox;
-
     //PlayerInputManager inputManager;
 
     //public PlayerInput Input;
@@ -41,8 +39,6 @@ public class StartPoint: MonoBehaviour
             isMultiplayer = bool.Parse(PlayerPrefs.GetString("Mode"));
         } 
 
-        Instantiate(gambiarraBox, new Vector3(-70, 17, -15), Quaternion.identity);
-
         if (isMultiplayer)
         {
 
@@ -70,7 +66,6 @@ public class StartPoint: MonoBehaviour
         else
         {
             //Gambiarra activate
-            Instantiate(gambiarraBox, new Vector3(-70, 30, -15), Quaternion.identity);
             var gamepadCount = Joystick.all.Count;
             if (gamepadCount >= 1)
             {

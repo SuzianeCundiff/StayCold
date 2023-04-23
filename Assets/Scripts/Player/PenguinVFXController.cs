@@ -15,8 +15,8 @@ public class PenguinVFXController : MonoBehaviour
 
         for (int i = 0; i < dashVFXs.Length; i++)
         {
-            mainModules[i] = dashVFXs[i].main;
-            mainModules[i].loop = true;
+            //mainModules[i] = dashVFXs[i].main;
+            //mainModules[i].loop = true;
         }
 
         StartCoroutine(StopVFXAfterTime());
@@ -28,8 +28,8 @@ public class PenguinVFXController : MonoBehaviour
 
         for (int i = 0; i < dashVFXs.Length; i++)
         {
-            mainModules[i] = dashVFXs[i].main;
-            mainModules[i].loop = false;
+            //mainModules[i] = dashVFXs[i].main;
+            //mainModules[i].loop = false;
         }
     }
 }
