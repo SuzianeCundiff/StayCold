@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885847060999051797}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.3}
   m_LocalScale: {x: 2.6676211, y: 2.6676211, z: 5.771907}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1885847061373348391}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1885847060999051881
 MeshFilter:
@@ -60,6 +60,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -93,9 +96,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885847060999051797}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &650369145574831517
@@ -119,8 +130,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1885847061373348391}
-  - component: {fileID: 1885847061373348388}
   - component: {fileID: 1885847061373348389}
+  - component: {fileID: 1885847061373348388}
   - component: {fileID: 1885847061373348386}
   - component: {fileID: 1885847061373348387}
   - component: {fileID: 4679227393824810421}
@@ -141,6 +152,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885847061373348384}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -153,24 +165,7 @@ Transform:
   - {fileID: 1563189822585302005}
   - {fileID: 6577617684738811899}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1885847061373348388
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1885847061373348384}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!143 &1885847061373348389
 CharacterController:
   m_ObjectHideFlags: 0
@@ -179,9 +174,16 @@ CharacterController:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885847061373348384}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
@@ -189,6 +191,33 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1885847061373348388
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885847061373348384}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!136 &1885847061373348386
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -197,8 +226,17 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885847061373348384}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: 0.7036171
   m_Height: 2.6575437
   m_Direction: 1
@@ -242,6 +280,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6699049014203981380, guid: 4963eaf973369aa4ea34d2f662868f21, type: 2}
   m_audioClip: {fileID: 8300000, guid: 4bf9cb0350af78948bdbcbd4cac6c958, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4bf9cb0350af78948bdbcbd4cac6c958, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -338,6 +377,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1700349590362898968, guid: 4963eaf973369aa4ea34d2f662868f21, type: 2}
   m_audioClip: {fileID: 8300000, guid: 93b300388d7de284c8b8a43de438354c, type: 3}
+  m_Resource: {fileID: 8300000, guid: 93b300388d7de284c8b8a43de438354c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -434,6 +474,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7587065244548936666, guid: 4963eaf973369aa4ea34d2f662868f21, type: 2}
   m_audioClip: {fileID: 8300000, guid: b6c14cf9851991b4e914605d9426e1d4, type: 3}
+  m_Resource: {fileID: 8300000, guid: b6c14cf9851991b4e914605d9426e1d4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -559,7 +600,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 4630856d-325d-471c-b390-72a512063f4b
-    m_ActionName: Gameplay/Move[/MY-POWER CO.,LTD. 2In1 USB Joystick/stick,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+    m_ActionName: 'Gameplay/Move[/MY-POWER CO.,LTD. 2In1 USB Joystick/stick,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1885847061373348387}
@@ -575,7 +616,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 067dd7ea-9d8b-4ae0-a80b-045c2204232f
-    m_ActionName: Gameplay/Attack[/Keyboard/space,/MY-POWER CO.,LTD. 2In1 USB Joystick/button3]
+    m_ActionName: 'Gameplay/Attack[/Keyboard/space,/MY-POWER CO.,LTD. 2In1 USB Joystick/button3]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1885847061373348387}
@@ -591,7 +632,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 4da6181d-db48-4329-8e3e-841888049956
-    m_ActionName: Gameplay/Special[/Keyboard/z,/MY-POWER CO.,LTD. 2In1 USB Joystick/button4]
+    m_ActionName: 'Gameplay/Special[/Keyboard/z,/MY-POWER CO.,LTD. 2In1 USB Joystick/button4]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -607,37 +648,37 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 65af6dbb-b64e-4c30-ae13-e2c05350d14a
-    m_ActionName: Gameplay/Switch[/Keyboard/x,/MY-POWER CO.,LTD. 2In1 USB Joystick/button2]
+    m_ActionName: 'Gameplay/Switch[/Keyboard/x,/MY-POWER CO.,LTD. 2In1 USB Joystick/button2]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 54330c7e-a681-4c26-b756-9c5fd662dc1e
-    m_ActionName: Player_1/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/MY-POWER
-      CO.,LTD. 2In1 USB Joystick/stick,/MY-POWER CO.,LTD. 2In1 USB Joystick/stick]
+    m_ActionName: 'Player_1/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/MY-POWER
+      CO.,LTD. 2In1 USB Joystick/stick,/MY-POWER CO.,LTD. 2In1 USB Joystick/stick]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 6a4883d0-bab3-49d1-a6e7-b90b5f3ffcd6
-    m_ActionName: Player_1/Attack[/Keyboard/m,/MY-POWER CO.,LTD. 2In1 USB Joystick/button3,/MY-POWER
-      CO.,LTD. 2In1 USB Joystick/button3]
+    m_ActionName: 'Player_1/Attack[/Keyboard/m,/MY-POWER CO.,LTD. 2In1 USB Joystick/button3,/MY-POWER
+      CO.,LTD. 2In1 USB Joystick/button3]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: f0e6b354-a51d-4d59-badb-c11f75cf636d
-    m_ActionName: Player_1/Special[/Keyboard/n,/MY-POWER CO.,LTD. 2In1 USB Joystick/button4,/MY-POWER
-      CO.,LTD. 2In1 USB Joystick/button4]
+    m_ActionName: 'Player_1/Special[/Keyboard/n,/MY-POWER CO.,LTD. 2In1 USB Joystick/button4,/MY-POWER
+      CO.,LTD. 2In1 USB Joystick/button4]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: a4286085-7d0e-4731-9c2a-6ff34def9924
-    m_ActionName: Player_2/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/MY-POWER
-      CO.,LTD. 2In1 USB Joystick/stick,/MY-POWER CO.,LTD. 2In1 USB Joystick/stick]
+    m_ActionName: 'Player_2/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/MY-POWER
+      CO.,LTD. 2In1 USB Joystick/stick,/MY-POWER CO.,LTD. 2In1 USB Joystick/stick]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 3674314b-d8dd-40a5-ba55-8b41d09a3cd1
-    m_ActionName: Player_2/Attack[/Keyboard/c,/MY-POWER CO.,LTD. 2In1 USB Joystick/button3,/MY-POWER
-      CO.,LTD. 2In1 USB Joystick/button3]
+    m_ActionName: 'Player_2/Attack[/Keyboard/c,/MY-POWER CO.,LTD. 2In1 USB Joystick/button3,/MY-POWER
+      CO.,LTD. 2In1 USB Joystick/button3]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 1d5c6e48-4818-4e31-a792-8836ef20afa8
-    m_ActionName: Player_2/Special[/Keyboard/v,/MY-POWER CO.,LTD. 2In1 USB Joystick/button4,/MY-POWER
-      CO.,LTD. 2In1 USB Joystick/button4]
+    m_ActionName: 'Player_2/Special[/Keyboard/v,/MY-POWER CO.,LTD. 2In1 USB Joystick/button4,/MY-POWER
+      CO.,LTD. 2In1 USB Joystick/button4]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -670,13 +711,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885847062630584576}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1.52}
   m_LocalScale: {x: 1.8627667, y: 2.0968685, z: 1.9002533}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1885847061373348391}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1885847062630584581
 MeshFilter:
@@ -703,6 +744,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -736,9 +780,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885847062630584576}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4939445908259794028
@@ -758,6 +810,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1885847061373348391}
     m_Modifications:
     - target: {fileID: 2492978606273893887, guid: a930a898c56b6db40bf2a008f3e7de64, type: 3}
@@ -833,6 +886,9 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a930a898c56b6db40bf2a008f3e7de64, type: 3}
 --- !u!4 &2333421048120964586 stripped
 Transform:
@@ -849,6 +905,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1885847061373348391}
     m_Modifications:
     - target: {fileID: 487309283446649943, guid: 6fdcace1aefb2b742af3589adaed1a77, type: 3}
@@ -900,6 +957,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fdcace1aefb2b742af3589adaed1a77, type: 3}
 --- !u!4 &1563189822585302005 stripped
 Transform:
@@ -922,6 +982,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1885847061373348391}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0a858918786617e47856dfe4e8355602, type: 3}
@@ -1069,6 +1130,18 @@ PrefabInstance:
       value: -174.00458
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0a858918786617e47856dfe4e8355602, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1885847062202662895}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0a858918786617e47856dfe4e8355602, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 229312537614308531}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0a858918786617e47856dfe4e8355602, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5121813301336896654}
   m_SourcePrefab: {fileID: 100100000, guid: 0a858918786617e47856dfe4e8355602, type: 3}
 --- !u!1 &1651332567795069995 stripped
 GameObject:
@@ -1077,7 +1150,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1885847062202662895
 Animator:
-  serializedVersion: 4
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1091,10 +1164,12 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &229312537614308531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1177,6 +1252,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1885847061373348391}
     m_Modifications:
     - target: {fileID: 617964730, guid: ccc595bbc2098dd40b6074967623496f, type: 3}
@@ -1236,6 +1312,9 @@ PrefabInstance:
       value: VFX_Slash
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccc595bbc2098dd40b6074967623496f, type: 3}
 --- !u!4 &6577617684738811899 stripped
 Transform:
